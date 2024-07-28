@@ -4,7 +4,7 @@ $APPLICATION->SetTitle("Услуги");
 ?>
 <?$APPLICATION->IncludeComponent("bitrix:catalog", ".default", array(
 	"IBLOCK_TYPE" => "products",
-	"IBLOCK_ID" => "3",
+	"IBLOCK_ID" => "7",
 	"BASKET_URL" => "",
 	"ACTION_VARIABLE" => "action",
 	"PRODUCT_ID_VARIABLE" => "id",

@@ -8,7 +8,7 @@ $APPLICATION->SetTitle("Мебельная компания");
 <h3>Наша продукция</h3>
 <?$APPLICATION->IncludeComponent("bitrix:furniture.catalog.index", "", array(
 	"IBLOCK_TYPE" => "products",
-	"IBLOCK_ID" => "2",
+	"IBLOCK_ID" => "6",
 	"IBLOCK_BINDING" => "section",
 	"CACHE_TYPE" => "A",
 	"CACHE_TIME" => "36000000",
@@ -19,7 +19,7 @@ $APPLICATION->SetTitle("Мебельная компания");
 <h3>Наши услуги</h3>
 <?$APPLICATION->IncludeComponent("bitrix:furniture.catalog.index", "", array(
 	"IBLOCK_TYPE" => "products",
-	"IBLOCK_ID" => "3",
+	"IBLOCK_ID" => "7",
 	"IBLOCK_BINDING" => "element",
 	"CACHE_TYPE" => "A",
 	"CACHE_TIME" => "36000000",
