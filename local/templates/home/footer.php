@@ -6,10 +6,18 @@ IncludeTemplateLangFile(__FILE__);
 				<div class="row">
 					<div class="col-lg-4">
 						<div class="mb-5">
-							<h3 class="footer-heading mb-4">About HomeSpace</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque,
-								consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima
-								minus odio!</p>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "file",
+		"AREA_FILE_SUFFIX" => "inc",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
+		"PATH" => "/include/about_btm.php"
+	),
+	false
+);?>
 						</div>
 					</div>
 					<div class="col-lg-4 mb-5 mb-lg-0">
@@ -33,28 +41,59 @@ IncludeTemplateLangFile(__FILE__);
 								<li><a href="#">Terms</a></li>
 								</ul>
 							</div>
+							<?$APPLICATION->IncludeComponent(
+								"bitrix:menu", 
+								"horizontal_multilevel", 
+								array(
+									"ROOT_MENU_TYPE" => "top",
+									"MAX_LEVEL" => "3",
+									"CHILD_MENU_TYPE" => "left",
+									"USE_EXT" => "Y",
+									"MENU_CACHE_TYPE" => "A",
+									"MENU_CACHE_TIME" => "36000000",
+									"MENU_CACHE_USE_GROUPS" => "Y",
+									"MENU_CACHE_GET_VARS" => array(
+									),
+									"COMPONENT_TEMPLATE" => "horizontal_multilevel",
+									"DELAY" => "N",
+									"ALLOW_MULTI_SELECT" => "N"
+								),
+								false,
+								array(
+									"ACTIVE_COMPONENT" => "Y"
+								)
+							);?>
 						</div>
 					</div>
 					<div class="col-lg-4 mb-5 mb-lg-0">
-						<h3 class="footer-heading mb-4">Follow Us</h3>
-						<div>
-						<a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-						<a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-						<a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-						<a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-						</div>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "file",
+		"AREA_FILE_SUFFIX" => "inc",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
+		"PATH" => "/include/follow.php"
+	),
+	false
+);?>
 					</div>
 				</div>
 				<div class="row pt-5 mt-5 text-center">
 					<div class="col-md-12">
-						<p>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;</script>
-						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
-						<i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com"
-							target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						</p>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "file",
+		"AREA_FILE_SUFFIX" => "inc",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
+		"PATH" => "/include/copyright.php"
+	),
+	false
+);?>
 					</div>
 				</div>
 			</div>
