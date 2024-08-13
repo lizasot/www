@@ -1,0 +1,8 @@
+.prop-entry {
+    height: 350px;
+    background-color: darkgoldenrod;
+}
+
+.img-fluid {
+    height: 350px !important;
+}

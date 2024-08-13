@@ -91,7 +91,7 @@ IncludeTemplateLangFile(__FILE__);
 		<div class="site-navbar">
 			<div class="container py-1">
 				<div class="row align-items-center">
-					<div class="col-8 col-md-8 col-lg-4">
+					<div class="col-8 col-md-8 col-lg-2">
 						<h1 class=""><a href="<?=SITE_DIR?>" title="<?=GetMessage('CFT_MAIN')?>"><?
 $APPLICATION->IncludeFile(
 	SITE_DIR."include/company_name.php",
@@ -100,34 +100,25 @@ $APPLICATION->IncludeFile(
 );
 ?></a></h1>
 					</div>
-					<div class="col-4 col-md-4 col-lg-8">
-						<nav class="site-navigation text-right text-md-right" role="navigation">
-							<div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#"
-								class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a>
-							</div>
-							<?$APPLICATION->IncludeComponent(
-								"bitrix:menu", 
-								"horizontal_multilevel", 
-								array(
-									"ROOT_MENU_TYPE" => "top",
-									"MAX_LEVEL" => "3",
-									"CHILD_MENU_TYPE" => "left",
-									"USE_EXT" => "Y",
-									"MENU_CACHE_TYPE" => "A",
-									"MENU_CACHE_TIME" => "36000000",
-									"MENU_CACHE_USE_GROUPS" => "Y",
-									"MENU_CACHE_GET_VARS" => array(
-									),
-									"COMPONENT_TEMPLATE" => "horizontal_multilevel",
-									"DELAY" => "N",
-									"ALLOW_MULTI_SELECT" => "N"
-								),
-								false,
-								array(
-									"ACTIVE_COMPONENT" => "Y"
-								)
-							);?>
-						</nav>
+					<div class="col-4 col-md-4 col-lg-10">
+							<?$APPLICATION->IncludeComponent("bitrix:menu", "top_multi", Array(
+	"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+		"MAX_LEVEL" => "3",	// Уровень вложенности меню
+		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+		"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+		"MENU_CACHE_TYPE" => "A",	// Тип кеширования
+		"MENU_CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+		"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+		"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+		"COMPONENT_TEMPLATE" => "horizontal_multilevel",
+		"DELAY" => "N",	// Откладывать выполнение шаблона меню
+		"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+	),
+	false,
+	array(
+	"ACTIVE_COMPONENT" => "Y"
+	)
+);?>
 					</div>
 				</div>
 			</div>
